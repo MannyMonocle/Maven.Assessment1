@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part1;
 
+import java.util.ArrayList;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -32,6 +34,15 @@ public class IntegerUtils {
      * @return integer with identical digits in the reverse order
      */
     public static Integer reverseDigits(Integer val) {
-        return null;
+
+        String str = Integer.toString(val);
+        String[] arrayOld = str.split("",val);
+        String ans = "";
+
+        for(int i = arrayOld.length - 1; i >= 0; i--){
+            ans += arrayOld[i];
+        }
+
+        return Integer.parseInt(ans);
     }
 }
