@@ -1,5 +1,8 @@
 package com.zipcodewilmington.assessment1.part2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -34,7 +37,20 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the most frequently occuring object in the array
      */
     public static Object getMostCommon(Object[] objectArray) {
-        return null;
+        int[] counts = new int[objectArray.length];
+
+        for (int i = 0; i < counts.length; i++){
+            counts[i] = getNumberOfOccurrences(objectArray, objectArray[i]);
+        }
+
+        int maxCount = 0;
+        for (int i = 0; i < counts.length; i++){
+            if (counts[i] > maxCount) {maxCount = counts[i];}
+        }
+
+        int position = Arrays.asList(counts).indexOf(maxCount);
+
+        return objectArray[position];
     }
 
 
@@ -44,7 +60,20 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+        int[] counts = new int[objectArray.length];
+
+        for (int i = 0; i < counts.length; i++){
+            counts[i] = getNumberOfOccurrences(objectArray, objectArray[i]);
+        }
+
+        int minCount = counts.length;
+        for (int i = 0; i < counts.length; i++){
+            if (counts[i] < minCount) {minCount = counts[i];}
+        }
+
+        int position = Arrays.asList(counts).indexOf(minCount);
+
+        return objectArray[position];
     }
 
     /**
@@ -54,6 +83,11 @@ public class ArrayUtils {
      * given two arrays `objectArray` and `objectArrayToAdd`, return an array containing all elements in `objectArray` and `objectArrayToAdd`
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
-        return null;
+        ArrayList<Object> merged = new ArrayList<>();
+        merged.add(Arrays.asList(objectArray));
+        merged.add(Arrays.asList(objectArrayToAdd));
+        Object[] ans = merged.toArray();
+
+        return ans;
     }
 }
