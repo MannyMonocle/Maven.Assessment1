@@ -34,6 +34,7 @@ public class PalindromeTest {
 
     }
 
+
     @Test
     public void solution3(){
         // Should assert to true
@@ -63,4 +64,5 @@ public class PalindromeTest {
         Assert.assertEquals(expected, actual);
 
     }
+
 }
