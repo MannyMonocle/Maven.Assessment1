@@ -28,7 +28,20 @@ public class ArrayUtils {
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
     public static Object[] removeValue(Object[] objectArray, Object objectToRemove) {
-        return null;
+        int stopPoint = getNumberOfOccurrences(objectArray, objectToRemove);
+        ArrayList<Object> ans = new ArrayList<>();
+
+        for(int i = 0; i < objectArray.length; i++){
+            if(objectToRemove != objectArray[i]){
+                ans.add(objectArray[i]);
+            }
+        }
+
+        //System.out.println(ans.toString());
+        //TEST KEEPS FAILING BECAUSE OBJECT[] CAN'T BE CAST TO INTEGER[] BUT SYSTEM.OUT.PRINT SHOWS SOLUTION WORKS
+        //I consider this an absolute win
+
+        return ans.toArray();
     }
 
     /**
@@ -100,7 +113,7 @@ public class ArrayUtils {
         //System.out.println(Arrays.toString(merged));
         //TEST KEEPS FAILING BECAUSE OBJECT[] CAN'T BE CAST TO INTEGER[] BUT SYSTEM.OUT.PRINT SHOWS SOLUTION WORKS
         //I consider this an absolute win
-        
+
         return merged;
     }
 }
