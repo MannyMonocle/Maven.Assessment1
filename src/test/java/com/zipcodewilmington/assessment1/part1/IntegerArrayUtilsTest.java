@@ -45,4 +45,17 @@ public class IntegerArrayUtilsTest {
         // : Then
         Assert.assertEquals(expected, actual, 0.01);
     }
+
+    @Test
+    public void getAverageTest2() {
+        // : Given
+        Integer[] input = { 3,  3, 4};
+        Double expected = 3.3333;
+
+        // : When
+        Double actual = IntegerArrayUtils.getAverage(input);
+
+        // : Then
+        Assert.assertEquals(expected, actual, 0.01);
+    }
 }
