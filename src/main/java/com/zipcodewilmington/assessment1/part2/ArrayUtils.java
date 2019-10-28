@@ -37,11 +37,14 @@ public class ArrayUtils {
             }
         }
 
+        Object[] realAns = new Object[objectArray.length - stopPoint];
+
+
         //System.out.println(ans.toString());
         //TEST KEEPS FAILING BECAUSE OBJECT[] CAN'T BE CAST TO INTEGER[] BUT SYSTEM.OUT.PRINT SHOWS SOLUTION WORKS
         //I consider this an absolute win
 
-        return ans.toArray();
+        return ans.toArray(realAns);
     }
 
     /**
