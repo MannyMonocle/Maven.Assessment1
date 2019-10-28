@@ -44,11 +44,12 @@ public class ArrayUtils {
         }
 
         int maxCount = 0;
+        int position = -1;
         for (int i = 0; i < counts.length; i++){
-            if (counts[i] > maxCount) {maxCount = counts[i];}
+            if (counts[i] > maxCount) {
+                maxCount = counts[i];
+                position = i;}
         }
-
-        int position = Arrays.asList(counts).indexOf(maxCount);
 
         return objectArray[position];
     }
@@ -67,11 +68,13 @@ public class ArrayUtils {
         }
 
         int minCount = counts.length;
+        int position = counts.length;
         for (int i = 0; i < counts.length; i++){
-            if (counts[i] < minCount) {minCount = counts[i];}
+            if (counts[i] < minCount) {
+                minCount = counts[i];
+                position = i;
+            }
         }
-
-        int position = Arrays.asList(counts).indexOf(minCount);
 
         return objectArray[position];
     }
