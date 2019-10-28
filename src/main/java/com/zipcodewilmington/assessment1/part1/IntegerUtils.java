@@ -11,7 +11,8 @@ public class IntegerUtils {
      * @return the sum of all integers between 0 and not including `n`
      */
     public static Integer getSumOfN(Integer n) {
-        return null;
+        int sum = n * (n+1)/2;
+        return sum;
     }
 
     /**
@@ -19,7 +20,11 @@ public class IntegerUtils {
      * @return the product of all integers between 0 and not including `n`
      */
     public static Integer getProductOfN(Integer n) {
-        return null;
+        int fac = 1;
+        for (int i = 1; i <= n; i++){
+            fac = fac * i;
+        }
+        return fac;
     }
 
     /**
